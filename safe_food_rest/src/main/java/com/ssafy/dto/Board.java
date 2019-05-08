@@ -2,17 +2,17 @@ package com.ssafy.dto;
 
 import java.util.Date;
 
-public class board {
+public class Board {
 	private Integer qno;
 	private String title;
 	private String content;
 	private Date inDate;
 	private Integer hit;
 	
-	public board() {
+	public Board() {
 		super();
 	}
-	public board(String title, String content) {
+	public Board(String title, String content) {
 		super();
 		this.title = title;
 		this.content = content;

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssafy.repository.HrmMapper"> <!-- @Mapper의 정보 -->
+		<select id="selectAll" resultType="board">
+			select * from qna order by qno desc
+		</select>
+		<select id="select" resultType="board" parameterType="int">
+			select * from qna where qno=#{qno} order by qno desc
+		</select>
+		<select id="pagingPageSelect" resultType="board" parameterType="int">
+			select * from qna order by qno desc limit #{page}, 10 
+		</select>
+		<select id="selectByTitle" resultType="board" parameterType="String">
+			select * from qna where title like #{title} order by qno desc
+		</select>
+		<select id="selectByContent" resultType="board" parameterType="String">
+			select * from qna where content like #{content} order by qno desc
+		</select>
+		<update id="hitUp" parameterType="board" >
+			update qna set hit=#{hit} where qno=#{qno}
+		</update>
+		<insert id="insertBoard" parameterType="board">
+			insert into qna(title,content) values(#{title},#{content})
+		</insert>
+		<update id="updateBoard" parameterType="board">
+			update qna set title=#{title}, content=#{content} where qno=#{qno}
+		</update>
+		<delete id="deleteBoard" parameterType="int">
+			delete from qna where qno=#{qno}
+		</delete>
+</mapper>
