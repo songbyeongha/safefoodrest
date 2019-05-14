@@ -9,6 +9,7 @@ public interface HrmService {
 	public Board select(int id);
 	public List<Board> pagingPageSelect(int page);
 	public List<Board> selectByTitle(String title);
+	public List<Board> selectByWriter(String writer);
 	public List<Board> selectByContent(String content);
 	public int hitUp(Board Board);
 	public int insertBoard(Board Board);

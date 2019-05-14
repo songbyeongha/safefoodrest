@@ -69,6 +69,12 @@ public class HrmServiceImpl implements HrmService{
 		// TODO Auto-generated method stub
 		return mapper.hitUp(Board);
 	}
+
+	@Override
+	public List<Board> selectByWriter(String writer) {
+		// TODO Auto-generated method stub
+		return mapper.selectByWriter(writer);
+	}
 	
 
 }

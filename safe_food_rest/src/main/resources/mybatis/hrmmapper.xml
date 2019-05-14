@@ -18,11 +18,14 @@
 		<select id="selectByContent" resultType="board" parameterType="String">
 			select * from qna where content like #{content} order by qno desc
 		</select>
+		<select id="selectByWriter" resultType="board" parameterType="String">
+			select * from qna where writer like #{writer} order by qno desc
+		</select>
 		<update id="hitUp" parameterType="board" >
 			update qna set hit=#{hit} where qno=#{qno}
 		</update>
 		<insert id="insertBoard" parameterType="board">
-			insert into qna(title,content) values(#{title},#{content})
+			insert into qna(title,content,writer) values(#{title},#{content},#{writer})
 		</insert>
 		<update id="updateBoard" parameterType="board">
 			update qna set title=#{title}, content=#{content} where qno=#{qno}

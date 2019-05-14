@@ -76,10 +76,11 @@ public class BoardRestController {
 	@ApiOperation(value="지정 page 보드 값 리턴", response=Map.class)
 	public ResponseEntity<Map<String, Object>> pageSelect(@PathVariable Integer page){
 		List<Board> list = service.pagingPageSelect((page-1)*10);
+		List<Board> max = service.selectAll();
 		Map<String, Object> resultMap = new HashMap<>();
 		resultMap.put("status", "OK");
 		resultMap.put("data", list);
-		
+		resultMap.put("maxpage", (max.size()/10)+1);
 		// 상태값 전달
 		ResponseEntity<Map<String, Object>> ent = null;
 		if(list.size()>0) {
@@ -112,6 +113,24 @@ public class BoardRestController {
 	@ApiOperation(value="지정 content 보드 정보 리턴", response=Map.class)
 	public ResponseEntity<Map<String, Object>> selectByContent(@PathVariable String content){
 		List<Board> list = service.selectByContent("%"+content+"%");
+		Map<String, Object> resultMap = new HashMap<>();
+		resultMap.put("status", "OK");
+		resultMap.put("data", list);
+		
+		// 상태값 전달
+		ResponseEntity<Map<String, Object>> ent = null;
+		if(list.size()>0) {
+			ent = new ResponseEntity<Map<String, Object>>(resultMap,HttpStatus.OK);			//200
+		}else {
+			ent = new ResponseEntity<Map<String, Object>>(resultMap,HttpStatus.NO_CONTENT);	//204
+		}
+		return ent;
+	}
+	
+	@GetMapping("/boards/writer/{writer}")
+	@ApiOperation(value="지정 writer 보드 정보 리턴", response=Map.class)
+	public ResponseEntity<Map<String, Object>> selectByWriter(@PathVariable String writer){
+		List<Board> list = service.selectByWriter("%"+writer+"%");
 		Map<String, Object> resultMap = new HashMap<>();
 		resultMap.put("status", "OK");
 		resultMap.put("data", list);

@@ -5,6 +5,7 @@ import java.util.Date;
 public class Board {
 	private Integer qno;
 	private String title;
+	private String writer;
 	private String content;
 	private Date inDate;
 	private Integer hit;
@@ -12,11 +13,28 @@ public class Board {
 	public Board() {
 		super();
 	}
+	
 	public Board(String title, String content) {
 		super();
 		this.title = title;
 		this.content = content;
 	}
+	
+	public Board(String title, String writer, String content) {
+		super();
+		this.title = title;
+		this.writer = writer;
+		this.content = content;
+	}
+
+	public String getWriter() {
+		return writer;
+	}
+
+	public void setWriter(String writer) {
+		this.writer = writer;
+	}
+
 	public Integer getQno() {
 		return qno;
 	}
