@@ -1,13 +1,10 @@
 package com.ssafy.controller;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.elasticsearch.rest.RestClientProperties;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -19,7 +16,6 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.client.RestTemplate;
 
 import com.ssafy.dto.Board;
 import com.ssafy.service.HrmService;
@@ -80,7 +76,7 @@ public class BoardRestController {
 		Map<String, Object> resultMap = new HashMap<>();
 		resultMap.put("status", "OK");
 		resultMap.put("data", list);
-		resultMap.put("maxpage", (max.size()/10)+1);
+		resultMap.put("maxpage", ((max.size()-1)/10)+1);
 		// 상태값 전달
 		ResponseEntity<Map<String, Object>> ent = null;
 		if(list.size()>0) {
@@ -147,11 +143,11 @@ public class BoardRestController {
 	
 	@PostMapping("/boards")
 	@ApiOperation(value="보드 정보 저장", response=Map.class)
-	public ResponseEntity<Map<String, Object>> insert(@RequestBody Board emp){
-		Integer result = service.insertBoard(emp);
+	public ResponseEntity<Map<String, Object>> insert(@RequestBody Board board){
+		Integer result = service.insertBoard(board);
 		Map<String, Object> resultMap = new HashMap<>();
 		resultMap.put("status", "OK");
-		resultMap.put("data", emp);
+		resultMap.put("data", board);
 		
 		// 상태값 전달
 		ResponseEntity<Map<String, Object>> ent = null;
