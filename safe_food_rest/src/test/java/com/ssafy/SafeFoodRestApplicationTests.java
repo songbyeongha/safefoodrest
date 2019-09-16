@@ -1,4 +1,4 @@
-package com.ssafy;
+package com.safefood;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

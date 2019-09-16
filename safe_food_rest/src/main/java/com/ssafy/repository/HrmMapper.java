@@ -1,10 +1,10 @@
-package com.ssafy.repository;
+package com.safefood.repository;
 
 import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 
-import com.ssafy.dto.Board;
+import com.safefood.dto.Board;
 
 @Mapper 
 public interface HrmMapper {

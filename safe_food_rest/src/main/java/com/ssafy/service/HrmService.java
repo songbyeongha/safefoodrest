@@ -1,8 +1,8 @@
-package com.ssafy.service;
+package com.safefood.service;
 
 import java.util.List;
 
-import com.ssafy.dto.Board;
+import com.safefood.dto.Board;
 
 public interface HrmService {
 	public List<Board> selectAll();

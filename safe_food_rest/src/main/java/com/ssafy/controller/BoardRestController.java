@@ -1,4 +1,4 @@
-package com.ssafy.controller;
+package com.safefood.controller;
 
 import java.util.HashMap;
 import java.util.List;
@@ -17,15 +17,15 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.ssafy.dto.Board;
-import com.ssafy.service.HrmService;
+import com.safefood.dto.Board;
+import com.safefood.service.HrmService;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 
 @RestController
 @RequestMapping("/api")
-@Api(value="SSAFY")
+@Api(value="SAFEFOOD")
 @CrossOrigin(origins="*")	// SOP 위반에 대한 처리
 public class BoardRestController {
 

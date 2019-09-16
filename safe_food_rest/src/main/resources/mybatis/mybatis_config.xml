@@ -8,7 +8,7 @@
 		<setting name="jdbcTypeForNull" value="NULL" />
 	</settings>
 	<typeAliases>
-		<typeAlias type="com.ssafy.dto.Board" alias="board" />
+		<typeAlias type="com.safefood.dto.Board" alias="board" />
 	</typeAliases>
 
 	<mappers>

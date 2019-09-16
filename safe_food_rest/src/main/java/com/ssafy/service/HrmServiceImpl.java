@@ -1,4 +1,4 @@
-package com.ssafy.service;
+package com.safefood.service;
 
 import java.util.List;
 
@@ -6,8 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.ssafy.dto.Board;
-import com.ssafy.repository.HrmMapper;
+import com.safefood.dto.Board;
+import com.safefood.repository.HrmMapper;
 
 @Service
 @Transactional

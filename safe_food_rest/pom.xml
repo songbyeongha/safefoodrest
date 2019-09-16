@@ -8,7 +8,7 @@
 		<version>2.1.4.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.ssafy</groupId>
+	<groupId>com.safefood</groupId>
 	<artifactId>safe_food_rest</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>safe_food_rest</name>

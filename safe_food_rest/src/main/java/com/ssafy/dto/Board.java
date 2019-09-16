@@ -1,4 +1,4 @@
-package com.ssafy.dto;
+package com.safefood.dto;
 
 import java.util.Date;
 
